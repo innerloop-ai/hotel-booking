@@ -109,8 +109,8 @@ function App() {
 
   // Filter hotels based on selected filters
   const filteredHotels = hotels.filter(hotel => {
-    // Filter by price
-    const priceInRange = hotel.price >= minPrice && hotel.price <= maxPrice;
+    // Filter by price - using priceRange array values instead of separate variables
+    const priceInRange = hotel.price >= priceRange[0] && hotel.price <= priceRange[1];
     
     // Filter by rating
     const ratingMatches = selectedRatings.length === 0 || selectedRatings.some(r => Math.floor(hotel.rating) === r);
@@ -265,30 +265,30 @@ function App() {
                       type="range" 
                       min="1000" 
                       max="10000" 
-                      value={minPrice}
-                      onChange={(e) => handlePriceChange(parseInt(e.target.value), maxPrice)}
+                      value={priceRange[0]}
+                      onChange={(e) => handlePriceChange(parseInt(e.target.value), priceRange[1])}
                       className="price-slider"
                     />
                     <input 
                       type="range" 
                       min="1000" 
                       max="10000" 
-                      value={maxPrice}
-                      onChange={(e) => handlePriceChange(minPrice, parseInt(e.target.value))}
+                      value={priceRange[1]}
+                      onChange={(e) => handlePriceChange(priceRange[0], parseInt(e.target.value))}
                       className="price-slider"
                     />
                     <div className="price-inputs">
                       <input 
                         type="number" 
-                        value={minPrice}
-                        onChange={(e) => handlePriceChange(parseInt(e.target.value), maxPrice)}
+                        value={priceRange[0]}
+                        onChange={(e) => handlePriceChange(parseInt(e.target.value), priceRange[1])}
                         className="price-input"
                       />
                       <span className="price-range-text">to</span>
                       <input 
                         type="number" 
-                        value={maxPrice}
-                        onChange={(e) => handlePriceChange(minPrice, parseInt(e.target.value))}
+                        value={priceRange[1]}
+                        onChange={(e) => handlePriceChange(priceRange[0], parseInt(e.target.value))}
                         className="price-input"
                       />
                     </div>
