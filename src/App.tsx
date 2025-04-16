@@ -138,10 +138,10 @@ function App() {
             <h1 className="brand-name">LuxStay</h1>
           </div>
           <div className="navbar-links">
-            <a href="#" className="nav-link">Home</a>
-            <a href="#" className="nav-link">Destinations</a>
-            <a href="#" className="nav-link">Offers</a>
-            <a href="#" className="nav-link">Contact</a>
+            <a href="/" className="nav-link">Home</a>
+            <a href="/" className="nav-link">Destinations</a>
+            <a href="/" className="nav-link">Offers</a>
+            <a href="/" className="nav-link">Contact</a>
           </div>
           <div className="navbar-actions">
             <button className="login-button">Login</button>
