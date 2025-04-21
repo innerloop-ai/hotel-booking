@@ -20,14 +20,14 @@ function App() {
   const [checkOut, setCheckOut] = useState('2025-04-17');
   const [sortBy, setSortBy] = useState('distance');
   const [hotels, setHotels] = useState<Hotel[]>([]);
-  
+
   // Filter state variables
   const [priceRange, setPriceRange] = useState<[number, number]>([1000, 10000]);
   const [minPrice, setMinPrice] = useState(1000);
   const [maxPrice, setMaxPrice] = useState(10000);
   const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
   const [selectedAmenities, setSelectedAmenities] = useState<string[]>([]);
-  
+
   // Simulate fetching hotels data
   useEffect(() => {
     // Mock data based on the screenshot
@@ -40,7 +40,7 @@ function App() {
         distance: 0.8,
         description: "Jaipur, India, hotel with sweeping Aravalli Hills views set in the commercial and business district.",
         price: 4987,
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        image: "https://play.innerloop.stream/playersvc/ins-share/cu-kR7ZQKWsCBFOgd3FdijPe",
         amenities: ["Free WiFi", "Swimming Pool", "Gym", "Restaurant"]
       },
       {
@@ -51,7 +51,7 @@ function App() {
         distance: 4.9,
         description: "Award-winning hotel in Jaipur, India, with spacious rooms, a spa and specialty restaurant",
         price: 7600,
-        image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        image: "https://play.innerloop.stream/playersvc/ins-share/cu-IZD6NGn9WberrmbraI3QV",
         amenities: ["Free WiFi", "Swimming Pool", "Spa", "Restaurant", "Room Service"]
       },
       {
@@ -62,7 +62,7 @@ function App() {
         distance: 10.2,
         description: "A luxury resort in Jaipur with elegant hotel accommodations, a spa and indoor/outdoor event space.",
         price: 8200,
-        image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+        image: "https://play.innerloop.stream/playersvc/ins-share/cu-P_DRC3weGyWwkN5QOQ2pu",
         amenities: ["Free WiFi", "Swimming Pool", "Spa", "Restaurant", "Room Service", "Fitness Center", "Airport Shuttle"]
       }
     ];
@@ -111,14 +111,14 @@ function App() {
   const filteredHotels = hotels.filter(hotel => {
     // Filter by price - using priceRange array values instead of separate variables
     const priceInRange = hotel.price >= priceRange[0] && hotel.price <= priceRange[1];
-    
+
     // Filter by rating
     const ratingMatches = selectedRatings.length === 0 || selectedRatings.some(r => Math.floor(hotel.rating) === r);
-    
+
     // Filter by amenities
     const amenitiesMatch = selectedAmenities.length === 0 || 
       selectedAmenities.every(amenity => hotel.amenities?.includes(amenity));
-    
+
     return priceInRange && ratingMatches && amenitiesMatch;
   });
 
@@ -173,12 +173,14 @@ function App() {
             <button className="hero-cta">Explore Special Deals</button>
           </div>
           <div className="hero-video">
-            <iframe
-              src="https://www.youtube.com/embed/qNaK7bDlFY4"
-              title="Luxury Hotel Experience"
+            <iframe 
+              allowFullScreen 
+              width="760" 
+              height="515" 
+              src="https://play.innerloop.stream/playersvc/ins-share/cu-xyKCeI0n_ZbS4wun6Yetp"
+              title="LuxStay"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; encrypted-media"
             ></iframe>
             <div className="video-caption">Experience our luxury hotel destinations</div>
           </div>
@@ -199,7 +201,7 @@ function App() {
                 />
               </div>
             </div>
-            
+
             <div className="search-item date">
               <label>CHECK IN</label>
               <div className="input-container">
@@ -215,7 +217,7 @@ function App() {
                 />
               </div>
             </div>
-            
+
             <div className="search-item date">
               <label>CHECK OUT</label>
               <div className="input-container">
@@ -231,12 +233,12 @@ function App() {
                 />
               </div>
             </div>
-            
+
             <button className="update-search-button" onClick={handleSearch}>Update Search</button>
           </div>
         </div>
       </header>
-      
+
       <main className="results-container">
         <div className="container">
           <div className="results-header">
@@ -250,7 +252,7 @@ function App() {
               </select>
             </div>
           </div>
-          
+
           <div className="results-content">
             {/* Filter Sidebar */}
             <div className="filter-sidebar">
@@ -352,22 +354,11 @@ function App() {
                   <div className="hotel-card" key={hotel.id}>
                     <div className="hotel-image">
                       <img src={hotel.image} alt={hotel.name} />
-                      <div className="image-nav">
-                        <button className="nav-button prev">❮</button>
-                        <button className="nav-button next">❯</button>
-                      </div>
-                      <div className="image-dots">
-                        <span className="dot active"></span>
-                        <span className="dot"></span>
-                        <span className="dot"></span>
-                        <span className="dot"></span>
-                        <span className="dot"></span>
-                      </div>
                     </div>
-                    
+
                     <div className="hotel-info">
                       <h2>{hotel.name}</h2>
-                      
+
                       <div className="hotel-meta">
                         <div className="rating">
                           <span className="star">⭐</span> {hotel.rating} ({hotel.reviews} reviews)
@@ -376,14 +367,14 @@ function App() {
                           <span className="distance-icon">📍</span> {hotel.distance} mi from destination
                         </div>
                       </div>
-                      
+
                       <p className="hotel-description">{hotel.description}</p>
-                      
+
                       <div className="hotel-actions">
                         <button className="view-details">View Details</button>
                       </div>
                     </div>
-                    
+
                     <div className="hotel-price">
                       <div className="price-amount">
                         {hotel.price.toLocaleString()}
@@ -397,7 +388,7 @@ function App() {
               </div>
             </div>
           </div>
-          
+
           <div className="map-button-container">
             <button className="map-button">
               <span className="map-icon">🗺️</span> Map

@@ -206,7 +206,7 @@
 
 .video-caption {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   text-align: center;
@@ -225,7 +225,7 @@
     padding: 30px;
     gap: 40px;
   }
-  
+
   .hero-content {
     padding-right: 0;
     margin-bottom: 0;
@@ -251,7 +251,7 @@
   .hero-section {
     padding: 40px 0;
   }
-  
+
   .hero-title {
     font-size: 28px;
   }
@@ -259,7 +259,7 @@
   .hero-subtitle {
     font-size: 16px;
   }
-  
+
   .hero-video {
     max-width: 100%;
   }
@@ -710,50 +710,6 @@
   object-fit: cover;
 }
 
-.image-nav {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.nav-button {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.image-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.dot.active {
-  background-color: white;
-}
 
 .hotel-info {
   flex: 2;
@@ -894,12 +850,12 @@
   .hotel-card {
     flex-direction: column;
   }
-  
+
   .hotel-image {
     width: 100%;
     height: 200px;
   }
-  
+
   .hotel-price {
     width: 100%;
     border-left: none;
@@ -913,7 +869,7 @@
     padding-left: 15px;
     padding-right: 15px;
   }
-  
+
   .search-container, 
   .results-container {
     padding: 0 15px;
@@ -922,11 +878,11 @@
   .search-row {
     flex-direction: column;
   }
-  
+
   .search-item {
     width: 100%;
   }
-  
+
   .update-search-button {
     width: 100%;
     margin-top: 10px;
@@ -938,7 +894,7 @@
   .results-content {
     flex-direction: column;
   }
-  
+
   .filter-sidebar {
     width: 100%;
     margin-bottom: 20px;
