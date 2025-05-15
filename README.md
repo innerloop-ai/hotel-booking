@@ -7,7 +7,7 @@ This project demonstrates how to embed InnerLoop images and videos into a web ap
 This project is built with:
 
 - React
-- JavaScript
+- TypeScript/JavaScript
 - CSS/SCSS
 - Create React App
 
