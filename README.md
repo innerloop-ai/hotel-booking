@@ -3,6 +3,9 @@
 ## Project Overview
 This project demonstrates how to embed InnerLoop images and videos into a web application using a hotel booking interface as an example. It showcases how media content can be seamlessly integrated within a modern web application.
 
+## Live Demo
+Check out the live demo: [Hotel Booking Demo](https://hotel-booking-ogz.pages.dev/)
+
 ## Technologies Used
 This project is built with:
 
